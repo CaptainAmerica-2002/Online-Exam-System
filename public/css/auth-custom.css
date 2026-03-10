@@ -1,0 +1,167 @@
+/* =========================================
+   ADMINLTE LOGIN / REGISTER AUTH PAGES
+   ========================================= */
+
+/* -------------------------------
+   AUTH PAGE BACKGROUND
+-------------------------------- */
+.login-page,
+.register-page,
+.forgot-password-page {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* -------------------------------
+   AUTH CARD BODY
+-------------------------------- */
+.custom-auth-body {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+/* Inputs stay clean */
+.custom-auth-body .form-control {
+    background: #ffffff;
+}
+
+/* Card shadow */
+.login-box .card,
+.register-box .card {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+/* -------------------------------
+   FOOTER (Forgot Password + Register)
+-------------------------------- */
+.card-footer.custom-auth-footer {
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+    border-top: none !important;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+/* Footer links */
+.card-footer.custom-auth-footer a {
+    color: #ffffff !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.card-footer.custom-auth-footer a:hover {
+    color: #ffeb3b !important;
+    text-decoration: underline;
+}
+
+/* Remove spacing issues */
+.card-footer.custom-auth-footer p {
+    margin: 6px 0;
+}
+
+/* -------------------------------
+   LOGIN / REGISTER BUTTON
+-------------------------------- */
+.btn-indigo {
+    background-color: #6a11cb;
+    border-color: #6a11cb;
+    color: #fff;
+}
+
+.btn-indigo:hover {
+    background-color: #2575fc;
+    border-color: #2575fc;
+    color: #fff;
+}
+
+/* -------------------------------
+   AUTH HEADER TEXT
+-------------------------------- */
+.login-box-msg,
+.register-box-msg {
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== Floating Chatbot ===== */
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#chatbot-box {
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+}
+
+.chat-footer button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.bot-message {
+    background: #f1f1f1;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-align: right;
+}
