@@ -1,64 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Online Exam System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📌 Project Overview
 
-## About Laravel
+The Online Exam System is a web-based application developed as an academic project during my Master of Computer Applications (MCA).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The system is designed to simplify the examination process by providing separate modules for administrators, teachers, and students. It supports exam management, online examination submission, automatic evaluation, and result generation.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Objectives
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Simplify the process of conducting online examinations.
+- Provide role-based access for administrators, teachers, and students.
+- Enable teachers to manage questions and examinations.
+- Allow students to take examinations online.
+- Automate evaluation and result generation.
+- Make examination results available in a convenient format.
 
-## Learning Laravel
+## ✨ Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Admin Module:** Administrative functions for managing the examination system.
+- **Teacher Module:** Tools for managing questions and examinations.
+- **Student Module:** Access to available examinations and online exam submission.
+- **Question Bank:** Management of examination questions.
+- **Timed Examinations:** Examinations with a time limit.
+- **Automatic Evaluation:** Automatic evaluation of supported question types.
+- **Result Generation:** Generation and display of examination results.
+- **PDF Marksheets:** Downloadable marksheets, if enabled in the application.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+*Note: Features listed above describe the intended functionality of the project. Their availability may depend on the current implementation.*
 
-## Laravel Sponsors
+## 🛠️ Technologies Used
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Backend:** PHP / Laravel
+- **Frontend:** HTML, CSS, JavaScript and Blade templates, where applicable
+- **Database:** MySQL, if configured
+- **Local Development Environment:** XAMPP
+- **Dependency Management:** Composer
 
-### Premium Partners
+## 💻 Requirements
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Before running the project, ensure that you have the following installed:
 
-## Contributing
+- XAMPP with a compatible PHP version
+- Composer
+- Git
+- A web browser
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The required PHP version and extensions depend on the Laravel version used by this project.
 
-## Code of Conduct
+## ⚙️ Installation and Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clone the Repository
 
-## Security Vulnerabilities
+Open a terminal and run:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+git clone https://github.com/CaptainAmerica-2002/Online-Exam-System.git
+```
 
-## License
+### 2. Navigate to the Project Directory
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cd Online-Exam-System
+```
+
+### 3. Install Dependencies
+
+Run:
+
+```bash
+composer install
+```
+
+### 4. Configure the Environment
+
+Create your environment configuration file:
+
+**Windows Command Prompt:**
+
+```cmd
+copy .env.example .env
+```
+
+Open the `.env` file and configure the database settings to match your local MySQL configuration.
+
+### 5. Generate the Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 6. Create the Database
+
+1. Start Apache and MySQL from the XAMPP Control Panel.
+2. Open phpMyAdmin in your browser.
+3. Create a database using the name configured in your `.env` file.
+
+### 7. Run Database Migrations
+
+If the project includes Laravel migrations, run:
+
+```bash
+php artisan migrate
+```
+
+If the project uses a supplied SQL database file instead, import that file into your database rather than running migrations blindly.
+
+### 8. Start the Application
+
+From the project directory, run:
+
+```bash
+php artisan serve
+```
+
+Open the local address displayed in the terminal in your browser.
+
+**Important:** The exact setup process may vary depending on the project's Laravel version, database structure, and configuration. These instructions must be verified against the current source code before being treated as a guaranteed installation procedure.
+
+## 📸 Screenshots
+
+Screenshots of the application's main pages will be added here.
+
+Suggested screenshots:
+
+- Login page
+- Admin dashboard
+- Teacher dashboard
+- Student dashboard
+- Examination page
+- Results page
+
+## 📚 Academic Information
+
+**Project Name:** Online Exam System  
+**Degree:** Master of Computer Applications (MCA)  
+**Project Type:** Academic Project
+
+## 👨‍💻 Developer
+
+**GitHub:** [CaptainAmerica-2002](https://github.com/CaptainAmerica-2002)
+
+**Repository:** [Online Exam System](https://github.com/CaptainAmerica-2002/Online-Exam-System)
