@@ -89,17 +89,32 @@ Open the `.env` file and configure the database settings to match your local MyS
 php artisan key:generate
 ```
 
-### 6. Create the Database
+### 6. Database Configuration
 
-1. Start Apache and MySQL from the XAMPP Control Panel.
+This project uses MySQL to store application data.
+
+1. Start **Apache** and **MySQL** from the XAMPP Control Panel.
 2. Open phpMyAdmin in your browser.
-3. Create a database using the name configured in your `.env` file.
+3. Create a database named `laravel`, or choose another name.
+4. Copy `.env.example` to `.env` in the project root directory.
+5. Update the database settings in `.env` to match your local configuration.
 
-### 7. Create the Database Tables
+Example configuration:
 
-This project includes Laravel database migration files for creating and modifying the application's database tables.
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-After configuring your database in the `.env` file, run the following command from the project directory:
+If your MySQL username or password differs from these example values, update the configuration accordingly.
+
+### Create Database Tables
+
+After configuring the database, run:
 
 ```bash
 php artisan migrate
@@ -107,9 +122,9 @@ php artisan migrate
 
 Laravel will execute the pending migrations and create the corresponding database tables.
 
-**Note:** If you encounter migration errors, check that your database exists, your database credentials in `.env` are correct, and your MySQL service is running.
+If the migration command fails, check that MySQL is running, the database exists, and your `.env` settings are correct.
 
-### 8. Start the Application
+### 7. Start the Application
 
 From the project directory, run:
 
