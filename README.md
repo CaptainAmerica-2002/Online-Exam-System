@@ -1,51 +1,60 @@
 # Online Exam System
 
+A web-based Online Exam System developed as an academic project during my Master of Computer Applications (MCA). The application is designed to simplify online examinations by providing separate modules for administrators, teachers, and students.
+
 ## 📌 Project Overview
 
-The Online Exam System is a web-based application developed as an academic project during my Master of Computer Applications (MCA).
+The Online Exam System helps manage examinations through a web application. It is designed to support question management, scheduled and timed examinations, online exam submissions, automatic evaluation, and result generation.
 
-The system is designed to simplify the examination process by providing separate modules for administrators, teachers, and students. It supports exam management, online examination submission, automatic evaluation, and result generation.
+The project uses Laravel for backend development and MySQL for database management.
 
 ## 🎯 Objectives
 
 - Simplify the process of conducting online examinations.
 - Provide role-based access for administrators, teachers, and students.
-- Enable teachers to manage questions and examinations.
+- Support question-bank and examination management.
 - Allow students to take examinations online.
-- Automate evaluation and result generation.
-- Make examination results available in a convenient format.
+- Support automatic evaluation of applicable question types.
+- Generate and display examination results.
 
 ## ✨ Features
 
 - **Admin Module:** Administrative functions for managing the examination system.
-- **Teacher Module:** Tools for managing questions and examinations.
-- **Student Module:** Access to available examinations and online exam submission.
+- **Teacher Module:** Functions for managing questions and examinations.
+- **Student Module:** Access to available examinations and online submissions.
 - **Question Bank:** Management of examination questions.
-- **Timed Examinations:** Examinations with a time limit.
-- **Automatic Evaluation:** Automatic evaluation of supported question types.
+- **Timed Examinations:** Support for time-limited examinations.
+- **Automatic Evaluation:** Evaluation of supported question types.
 - **Result Generation:** Generation and display of examination results.
-- **PDF Marksheets:** Downloadable marksheets, if enabled in the application.
+- **PDF Marksheets:** PDF result documents, where supported by the application.
 
-*Note: Features listed above describe the intended functionality of the project. Their availability may depend on the current implementation.*
+*Note: The feature descriptions should be checked against the current implementation before being treated as a complete list of working features.*
 
 ## 🛠️ Technologies Used
 
-- **Backend:** PHP / Laravel
-- **Frontend:** HTML, CSS, JavaScript and Blade templates, where applicable
-- **Database:** MySQL, if configured
+- **Backend:** PHP
+- **Framework:** Laravel 8
+- **Frontend:** HTML, CSS, JavaScript, Blade templates
+- **CSS Framework:** Tailwind CSS
+- **JavaScript Library:** Alpine.js
+- **Database:** MySQL
+- **Frontend Build Tool:** Laravel Mix
+- **PDF Generation:** Laravel DomPDF
 - **Local Development Environment:** XAMPP
-- **Dependency Management:** Composer
+- **PHP Dependency Manager:** Composer
+- **Frontend Dependency Manager:** npm
 
 ## 💻 Requirements
 
-Before running the project, ensure that you have the following installed:
+Install the following tools before setting up the project:
 
-- XAMPP with a compatible PHP version
+- XAMPP with a compatible PHP version and MySQL
 - Composer
+- Node.js and npm
 - Git
 - A web browser
 
-The required PHP version and extensions depend on the Laravel version used by this project.
+The project's `composer.json` specifies PHP `^7.3|^8.0` and Laravel `^8.75`. Actual compatibility depends on the PHP version and the installed dependencies.
 
 ## ⚙️ Installation and Setup
 
@@ -63,7 +72,7 @@ git clone https://github.com/CaptainAmerica-2002/Online-Exam-System.git
 cd Online-Exam-System
 ```
 
-### 3. Install Dependencies
+### 3. Install PHP Dependencies
 
 Run:
 
@@ -71,9 +80,11 @@ Run:
 composer install
 ```
 
+Wait for Composer to finish installing the required packages.
+
 ### 4. Configure the Environment
 
-Create your environment configuration file:
+Create your local environment configuration file.
 
 **Windows Command Prompt:**
 
@@ -81,23 +92,18 @@ Create your environment configuration file:
 copy .env.example .env
 ```
 
-Open the `.env` file and configure the database settings to match your local MySQL configuration.
+If a `.env` file already exists, do not overwrite it.
 
-### 5. Generate the Application Key
+### 5. Configure the Database
 
-```bash
-php artisan key:generate
-```
+This project is configured to use MySQL.
 
-### 6. Database Configuration
-
-This project uses MySQL to store application data.
-
-1. Start **Apache** and **MySQL** from the XAMPP Control Panel.
-2. Open phpMyAdmin in your browser.
-3. Create a database named `laravel`, or choose another name.
-4. Copy `.env.example` to `.env` in the project root directory.
-5. Update the database settings in `.env` to match your local configuration.
+1. Open the XAMPP Control Panel.
+2. Start **Apache** and **MySQL**.
+3. Open phpMyAdmin in your browser.
+4. Create a database named `laravel`.
+5. Open the `.env` file in the project root directory.
+6. Update the database configuration to match your local MySQL settings.
 
 Example configuration:
 
@@ -110,53 +116,13 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-If your MySQL username or password differs from these example values, update the configuration accordingly.
+These are example settings. Change the database name, username, or password if your local MySQL configuration is different.
 
-### Create Database Tables
+**Important:** Never upload your actual `.env` file or private credentials to GitHub.
 
-After configuring the database, run:
+### 6. Generate the Application Key
 
-```bash
-php artisan migrate
-```
-
-Laravel will execute the pending migrations and create the corresponding database tables.
-
-If the migration command fails, check that MySQL is running, the database exists, and your `.env` settings are correct.
-
-### 7. Start the Application
-
-From the project directory, run:
+Run:
 
 ```bash
-php artisan serve
-```
-
-Open the local address displayed in the terminal in your browser.
-
-**Important:** The exact setup process may vary depending on the project's Laravel version, database structure, and configuration. These instructions must be verified against the current source code before being treated as a guaranteed installation procedure.
-
-## 📸 Screenshots
-
-Screenshots of the application's main pages will be added here.
-
-Suggested screenshots:
-
-- Login page
-- Admin dashboard
-- Teacher dashboard
-- Student dashboard
-- Examination page
-- Results page
-
-## 📚 Academic Information
-
-**Project Name:** Online Exam System  
-**Degree:** Master of Computer Applications (MCA)  
-**Project Type:** Academic Project
-
-## 👨‍💻 Developer
-
-**GitHub:** [CaptainAmerica-2002](https://github.com/CaptainAmerica-2002)
-
-**Repository:** [Online Exam System](https://github.com/CaptainAmerica-2002/Online-Exam-System)
+php artisan key:generate
