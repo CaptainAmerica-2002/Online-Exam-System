@@ -95,15 +95,19 @@ php artisan key:generate
 2. Open phpMyAdmin in your browser.
 3. Create a database using the name configured in your `.env` file.
 
-### 7. Run Database Migrations
+### 7. Create the Database Tables
 
-If the project includes Laravel migrations, run:
+This project includes Laravel database migration files for creating and modifying the application's database tables.
+
+After configuring your database in the `.env` file, run the following command from the project directory:
 
 ```bash
 php artisan migrate
 ```
 
-If the project uses a supplied SQL database file instead, import that file into your database rather than running migrations blindly.
+Laravel will execute the pending migrations and create the corresponding database tables.
+
+**Note:** If you encounter migration errors, check that your database exists, your database credentials in `.env` are correct, and your MySQL service is running.
 
 ### 8. Start the Application
 
